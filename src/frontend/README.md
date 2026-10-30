@@ -26,6 +26,9 @@ npm run build
 
 - `src/api/client.js` — тонкий клиент API (`getFormats`, `convertImage`).
 - `src/App.jsx` — состояние загрузки, конвертации и drag&drop.
+- `src/assets/icon/icon.png` — исходная иконка проекта.
+- `src/assets/icon/icon-mark.png` — обрезанный wordmark для шапки.
+- `public/favicon.png` — иконка сайта.
 - `src/components/DropZone.jsx` — пустое состояние с выбором файла.
 - `src/components/FormatPicker.jsx` — список целевых форматов.
 - `src/components/Thumb.jsx` — превью с заглушкой для форматов, которые браузер не показывает (например, TIFF).

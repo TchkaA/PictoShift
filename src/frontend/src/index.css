@@ -94,28 +94,22 @@ img {
 
 .brand {
   display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.brand__mark {
-  display: grid;
-  place-items: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  background: linear-gradient(145deg, #7fb9e9 0%, #4d8fca 100%);
-  box-shadow: 0 10px 24px -10px rgba(63, 127, 184, 0.75);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .brand__title {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  margin: 0;
+  line-height: 0;
+}
+
+.brand__logo {
+  display: block;
+  width: auto;
+  height: 44px;
+  /* Белый фон иконки растворяется на светлом фоне страницы */
+  mix-blend-mode: multiply;
 }
 
 .brand__subtitle {
