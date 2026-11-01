@@ -1,0 +1,43 @@
+name: PictoShift CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  backend:
+    name: Backend (Spring Boot)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build and Test
+        run: mvn -B package
+
+  frontend:
+    name: Frontend (React)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+          cache-dependency-path: 'src/frontend/package-lock.json'
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./src/frontend
+      - name: Run tests
+        run: npm test -- --watchAll=false
+        working-directory: ./src/frontend
+      - name: Build
+        run: npm run build
+        working-directory: ./src/frontend
