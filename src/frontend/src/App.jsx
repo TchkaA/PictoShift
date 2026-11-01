@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { convertImage, getFormats } from './api/client.js'
+import logoMark from './assets/icon/icon-mark.png'
 import DropZone from './components/DropZone.jsx'
 import FormatPicker from './components/FormatPicker.jsx'
 import Thumb from './components/Thumb.jsx'
@@ -243,13 +244,10 @@ function App() {
     <div className="page">
       <header className="page__header">
         <div className="brand">
-          <span className="brand__mark" aria-hidden="true">
-            PS
-          </span>
-          <div>
-            <h1 className="brand__title">PictoShift</h1>
-            <p className="brand__subtitle">Конвертация изображений</p>
-          </div>
+          <h1 className="brand__title">
+            <img className="brand__logo" src={logoMark} alt="PictoShift" draggable="false" />
+          </h1>
+          <p className="brand__subtitle">Конвертация изображений</p>
         </div>
       </header>
 
